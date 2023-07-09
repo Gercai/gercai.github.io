@@ -1,0 +1,182 @@
+$primary-color: rgb(255, 250, 238);
+$secondary-color: rgb(218, 224, 175);
+$contrast-color: rgb(89, 90, 159);
+$contrast-color2: rgb(118,65,61);
+$font-color: #141414;
+$font-color2: rgb(215,220,178);
+
+
+
+.canvasFlex{
+    display:flex;
+}
+
+
+
+.hue-map{
+    max-width: 1rem;
+}
+ 
+.colorPick{
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.2rem;
+    border-radius: 4px;
+}
+
+.color-cursor{
+    &.dragging{
+        transition: none;
+    }
+
+    border-radius: 100%;
+    background: #ccc;
+    z-index: 2;
+    border: 2px #fff solid;
+    position: absolute;
+    box-sizing: border-box;
+
+    &#valSat-cursor{
+        width: 30px;
+        height: 30px;
+        margin-left: -15px;
+        margin-top: -15px;
+        top: 0;
+        left: 0;
+    }
+
+    &#hue-cursor{
+    top: 0;
+    left: 50%;
+    height: 20px;
+    width: 20px;
+    margin: -10px 0 0 -10px
+    }
+
+}
+
+canvas{
+    object-fit: contain;
+}
+
+#referenceF{
+    min-width: 300px;
+    min-height: 360px;
+    background-color: $secondary-color;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.canvasFrame{
+
+    position: relative;
+    &#referenceF{
+        min-height: "min-content";
+    }
+    &#stage{
+    
+        height: 557px;
+        width: 620px;
+}
+
+    &#hueF{
+        width: 10px;
+        margin-left: 100px;
+        *>#hue{
+            width: 100%;
+            position: absolute;
+            width: 10px;
+        }
+    }
+    &#valSatF{
+        width: 212px;
+        height: 200px;
+        canvas{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    *>canvas{
+        position: absolute;
+    }
+}
+
+#drawingCanvasFrame{
+
+}
+
+#canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    // width: 100%;
+    // height: 100%;
+}
+
+#backgroundLayer{
+}
+
+.colorWheel{
+    display:flex;
+justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    div{
+        width: 100%;
+    }
+}
+
+
+.setting{
+    width: 100%;
+    
+    margin: 1rem;
+    background-color: $secondary-color;
+    border-radius: 5px;
+}
+
+.optionPanel{
+
+    display:flex;
+    justify-content: space-between;
+
+    button{
+        width: 1rem;
+    }
+
+    background-color: $secondary-color;
+    *>button{
+        border: none;
+        background-color: $primary-color;
+        width: 1rem;
+        margin-left: 0.2rem;
+        font-weight: bold;
+        
+    }
+    *>.inactive:disabled{
+        background-color: dimgrey;
+         color: linen;
+    opacity: 1;
+    }
+    *>:nth-child(2n){
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+}
+
+#colorpalettePlace{
+    padding: 0px;
+    margin: 0;
+}
+
+canvas{
+    position: absolute;
+}
+
+
+.inactive:disabled{
+    background-color: dimgrey;
+         color: linen;
+    opacity: 1;
+}
